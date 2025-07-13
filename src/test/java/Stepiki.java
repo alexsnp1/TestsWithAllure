@@ -18,11 +18,11 @@ public class Stepiki {
         $("#query-builder-test").setValue("qa-guru").pressEnter();
     }
     @Step ("Кликаем по ссылке репозитория")
-    public void OpenRepositoryLink() {
+    public void openRepositoryLink() {
         $("[href='/qa-guru/niffler-ng-6']").click();
     }
     @Step ("Открываем Issues")
-    public void OpenIssuesTab() {
+    public void openIssuesTab() {
         $("#issues-tab").click();
     }
     @Step ("Проверяем название Issue")

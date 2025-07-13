@@ -11,16 +11,8 @@ import static io.qameta.allure.Allure.step;
 
 public class Tests {
 
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "1600x900";
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
-    }
     @Test
-    void AllureTest() {
+    void allureTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open("https://github.com/");
         $("[data-action='click:qbsearch-input#searchInputContainerClicked']").click();
@@ -32,7 +24,7 @@ public class Tests {
     }
 
     @Test
-    void LambdaTest() {
+    void lambdaTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу", () -> {
             open("https://github.com/");
@@ -56,14 +48,14 @@ public class Tests {
 
     }
     @Test
-    public void StepsTest() {
+    public void stepsTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Stepiki stepiki = new Stepiki();
         stepiki.openMainPage();
         stepiki.openSearchBar();
         stepiki.searchForRepository();
-        stepiki.OpenRepositoryLink();
-        stepiki.OpenIssuesTab();
+        stepiki.openRepositoryLink();
+        stepiki.openIssuesTab();
         stepiki.checkIssueName();
     }
 }
